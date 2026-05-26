@@ -57,15 +57,12 @@ const DoctorSchema = new mongoose.Schema({
     type: Boolean,
     default: true
   },
-  shedule: [
+  schedule: [
     {
-      day: String, // "Monday", "Tuesday", ...
-      timeSlots: [
-        {
-          start: String, // "09:00"
-          end: String // "17:00"
-        }
-      ]
+      day: String,
+
+      startTime: String, // 08:00
+      endTime: String    // 12:00
     }
   ]
 

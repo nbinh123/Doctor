@@ -1,10 +1,15 @@
+import React from "react";
+
 export default function Footer() {
   return (
     <footer className="border-t border-sky-100 bg-white">
       <div className="mx-auto grid max-w-7xl gap-6 px-4 py-10 md:grid-cols-3 md:px-6">
         <div>
           <div className="mb-3 text-lg font-bold text-slate-800">DoctorCare</div>
-          <p className="text-sm leading-6 text-slate-600">Nền tảng đặt lịch hẹn bác sĩ với giao diện nhẹ nhàng, tin cậy, hỗ trợ đặt lịch, thanh toán và theo dõi hồ sơ khám bệnh.</p>
+          <p className="text-sm leading-6 text-slate-600">
+            Nền tảng đặt lịch hẹn bác sĩ với giao diện nhẹ nhàng, tin cậy, hỗ trợ đặt
+            lịch, thanh toán và theo dõi hồ sơ khám bệnh.
+          </p>
         </div>
         <div>
           <div className="mb-3 font-semibold text-slate-800">Liên kết</div>

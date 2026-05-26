@@ -8,11 +8,12 @@ const router = express.Router()
 const DoctorController = require("../../controllers/DoctorController")
 const authMiddleware = require("../middleware/auth.middleware")
 
-router.get('/', authMiddleware, DoctorController.getDoctors)
+router.get('/', DoctorController.getDoctors)
+router.get('/seed', DoctorController.seedDoctors)
 router.post('/', authMiddleware, DoctorController.createDoctor)
 router.get('/:id', authMiddleware, DoctorController.getDoctorById)
 // tìm kiếm theo chuyên khoa
-router.get('/specialties/:specialty', authMiddleware, DoctorController.searchDoctorsBySpecialty)
+router.get('/specialties', authMiddleware, DoctorController.getAllDoctors)
 router.get('/:id/schedule', authMiddleware, DoctorController.getDoctorSchedule)
 
 router.put('/:id', authMiddleware, DoctorController.updateDoctor)

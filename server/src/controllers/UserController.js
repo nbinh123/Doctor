@@ -6,11 +6,11 @@ class UserController {
 
     //  [POST]  /login
     login = async (req, res, next) => {
-        const { username, password } = req.body;
+        const { email, password } = req.body;
 
         // Kiểm tra xem người dùng có tồn tại không
         const user = await User
-            .findOne({ username })
+            .findOne({ email })
             .select('+password');
         if (!user) return res.status(400).json({
             message: 'User does not exist',

@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const BookingSchema = new mongoose.Schema({
-  userId: {
+  patientId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
     required: true
@@ -31,7 +31,6 @@ const BookingSchema = new mongoose.Schema({
 
   patientName: {
     type: String,
-    required: true
   },
 
   phone: {
@@ -58,6 +57,11 @@ const BookingSchema = new mongoose.Schema({
     type: String,
     enum: ['UNPAID', 'PAID', 'FAILED'],
     default: 'UNPAID'
+  }, 
+  cancelledAt: {
+    type: Date,
+    default: null,
+    expires: 60 * 60 * 24 * 3 // 3 ngày
   }
 
 }, { timestamps: true });
